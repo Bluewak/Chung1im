@@ -1,4 +1,4 @@
-<!-- ⚠️ 이 파일은 자동 생성되며, 직접 수정하지 마세요. 수정하려면 docs/readme-template.md를 편집하세요 -->
+<!-- ⚠️ 이 파일은 자동 생성되며, 직접 수정하지 마세요. -->
 
 
 # 🎸 Chung1im - 밴드 동아리 커뮤니티 웹사이트
@@ -20,7 +20,7 @@ React 기반으로 개발되며, Express + MySQL 백엔드와 연동됩니다.
 ---
 
 ## 🗂️ 폴더 구조 (예정)
-
+```
 Chung1im/
 ├── frontend/ # React 프론트엔드
 │ ├── public/
@@ -42,7 +42,22 @@ Chung1im/
 ├── .gitignore
 ├── README.md
 └── LICENSE
+```
+---
 
+## 🛠️ 개발자용 스크립트
+
+다음 스크립트는 개발 편의를 위해 정의되어 있습니다.
+
+### 📄 README 템플릿 기반 자동 생성
+
+- `README.md`는 직접 수정하지 않고, 템플릿 파일을 기반으로 자동 생성합니다.
+- 템플릿 경로: `docs/readme-template.md`
+
+```bash
+npm run generate-readme
+
+```
 ---
 ## 🚀 로컬 실행 방법
 
@@ -66,4 +81,3 @@ node server.js
 | --- | ------------- |
 | Bleuwak | 프로젝트 기획, DB 설계, ERD 작성, 백엔드  |
 | kim1og | 프론트엔드 구현      |
-
