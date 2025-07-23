@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>동아리 커뮤니티</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>동아리 커뮤니티</h1>
+    <nav>
+      <button onclick="showSection('notice')">공지사항</button>
+      <button onclick="showSection('free')">자유게시판</button>
+      <button onclick="showSection('members')">세션별 인원</button>
+      <button onclick="showSection('videos')">무대 영상</button>
+      <button onclick="handleLoginClick()" id="loginBtn">로그인</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 공지사항 -->
+    <section id="notice" class="content-section">
+      <h2>공지사항</h2>
+      <div id="notice-board">
+  <div class="notice-post">
+    <h3>📢 2024 여름 MT 안내</h3>
+    <p>8월 10일부터 2박 3일간 가평으로 MT를 떠납니다. 자세한 사항은 추후 공지 예정입니다.</p>
+    <hr/>
+  </div>
+  <div class="notice-post">
+    <h3>🎶 정기공연 리허설 일정</h3>
+    <p>정기공연 리허설은 7월 1일부터 매주 월/수/금 저녁 6시에 동아리방에서 진행됩니다.</p>
+    <hr/>
+  </div>
+  <div class="notice-post">
+    <h3>🧼 동아리방 청소 안내</h3>
+    <p>이번 주 금요일 활동 전, 전체 청소가 예정되어 있으니 모두 참여 부탁드립니다!</p>
+    <hr/>
+  </div>
+ <!-- 관리자만 보이는 글쓰기 버튼 + 폼 -->
+  <div id="notice-write" style="display: none; margin-top: 20px;">
+    <form id="noticeForm">
+      <input type="text" id="noticeTitle" placeholder="공지 제목" required />
+      <textarea id="noticeContent" placeholder="공지 내용" required></textarea>
+      <button type="submit">공지 작성</button>
+    </form>
+  </div>
+</div>
+    </section>
+
+ <section id="free" class="content-section" style="display: none;">
+  <h2>자유게시판</h2>
+  <div id="free-board">
+    <div class="free-post">
+      <h3>🎸 연습실 예약 문의</h3>
+      <p>혹시 이번 주 금요일 저녁 7시쯤 연습실 비어 있나요?</p>
+      <p><strong>작성자:</strong> 김하늘</p>
+      <button class="delete-btn">삭제</button>
+      <hr />
+    </div>
+    <div class="free-post">
+      <h3>🧢 동아리 후드티 재주문 의견</h3>
+      <p>후드티 디자인 다시 한번 논의해볼 수 있을까요? 더운 계절에 맞게 반팔도 좋을 것 같아요.</p>
+      <p><strong>작성자:</strong> 정민우</p>
+      <button class="delete-btn">삭제</button>
+      <hr />
+    </div>
+  </div>
+
+  <button id="showFormBtn">글쓰기</button>
+
+  <form id="postForm" style="display: none;">
+    <input type="text" id="writer" placeholder="작성자" required />
+    <input type="text" id="title" placeholder="제목" required />
+    <textarea id="content" placeholder="내용" required></textarea>
+    <button type="submit">작성 완료</button>
+  </form>
+</section>
+
+    <!-- 세션별 인원 -->
+<section id="members" class="content-section" style="display: none;">
+  <h2>세션별 인원</h2>
+  <ul>
+    <li>보컬 세션: 김하늘, 이서윤, 박진우, 최가영, 정민수, 오유진, 류지호</li>
+    <li>일렉기타 세션: 김도윤, 이시우, 정하은, 박재민, 손예린, 유승민, 고은채</li>
+    <li>베이스 세션: 윤서진, 배지훈, 한소연, 임채민, 조유빈, 장하준, 김보경</li>
+    <li>키보드 세션: 홍나윤, 문재호, 이지아, 강도현, 박서영, 최현우, 노유림</li>
+    <li>드럼 세션: 이정우, 권채원, 김태윤, 안유리, 백승찬, 신유나, 황도현</li>
+  </ul>
+</section>
+<!-- 무대 영상 -->
+<section id="videos" class="content-section" style="display: none;">
+  <h2>무대 영상</h2>
+  <p>동아리 공연 및 무대 영상 모음입니다.</p>
+  <div class="video-grid">
+    <div class="video-card">
+      <a href="https://youtu.be/JsTMlrdeeLg" target="_blank">
+        <img src="https://img.youtube.com/vi/JsTMlrdeeLg/0.jpg" alt="무대 영상 1 썸네일" />
+        <p>🎥 무대 영상 1</p>
+      </a>
+    </div>
+    <div class="video-card">
+      <a href="https://youtu.be/lSpxnnGXArg" target="_blank">
+        <img src="https://img.youtube.com/vi/lSpxnnGXArg/0.jpg" alt="무대 영상 2 썸네일" />
+        <p>🎥 무대 영상 2</p>
+      </a>
+    </div>
+    <div class="video-card">
+      <a href="https://youtu.be/ccm_Gls4rRM" target="_blank">
+        <img src="https://img.youtube.com/vi/ccm_Gls4rRM/0.jpg" alt="무대 영상 3 썸네일" />
+        <p>🎥 무대 영상 3</p>
+      </a>
+    </div>
+    <div class="video-card">
+      <a href="https://youtu.be/-mFRP9jpxDY" target="_blank">
+        <img src="https://img.youtube.com/vi/-mFRP9jpxDY/0.jpg" alt="무대 영상 4 썸네일" />
+        <p>🎥 무대 영상 4</p>
+      </a>
+    </div>
+    <div class="video-card">
+      <a href="https://youtu.be/hca6YI2P948" target="_blank">
+        <img src="https://img.youtube.com/vi/hca6YI2P948/0.jpg" alt="무대 영상 5 썸네일" />
+        <p>🎥 무대 영상 5</p>
+      </a>
+    </div>
+    <div class="video-card">
+      <a href="https://youtu.be/_017DUMJOGs" target="_blank">
+        <img src="https://img.youtube.com/vi/_017DUMJOGs/0.jpg" alt="무대 영상 6 썸네일" />
+        <p>🎥 무대 영상 6</p>
+      </a>
+    </div>
+    <div class="video-card">
+      <a href="https://youtu.be/ZFi8yHwzIGk" target="_blank">
+        <img src="https://img.youtube.com/vi/ZFi8yHwzIGk/0.jpg" alt="무대 영상 7 썸네일" />
+        <p>🎥 무대 영상 7</p>
+      </a>
+    </div>
+    <div class="video-card">
+      <a href="https://youtu.be/0-V1jiuZbU8" target="_blank">
+        <img src="https://img.youtube.com/vi/0-V1jiuZbU8/0.jpg" alt="무대 영상 8 썸네일" />
+        <p>🎥 무대 영상 8</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+        <!-- 로그인 페이지 -->
+    <section id="login" class="content-section" style="display: none;">
+      <h2>로그인</h2>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="아이디" required />
+        <input type="password" id="password" placeholder="비밀번호" required />
+        <button type="submit">로그인</button>
+      </form>
+      <p id="loginMessage"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html> 

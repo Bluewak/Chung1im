@@ -1,0 +1,7 @@
+node_modules/
+.env
+dist/
+.ssh/
+.git-credentials
+node_modules/
+.env
